@@ -8,7 +8,7 @@ function setup() {
     
     textAlign(CENTER);
     background("#7FFFD400");
-    samp.autostart = true;
+    //samp.autostart = true;
                
     } 
   
