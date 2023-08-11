@@ -1,6 +1,6 @@
 function setup() {
     canvas = createCanvas(windowWidth, 100);
-    canvas.position(0,130);
+    canvas.position(200,0);
     //canvas.position(0, 0);
     //canvas.style('zdex', '-1');
     
