@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 
@@ -13,8 +12,14 @@ Feel free to modify it! :)
 <title>JavaScript SunVox Player</title>
 </head>
 
-<script src="lib/sunvox.js"></script>
-<script src="lib/sunvox_lib_loader.js"></script>
+<script src="sunvox.js"></script>
+<script src="sunvox_lib_loader.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+
+<script src="sketch.js"></script>
+
 <script>
 var fileSize = 0;
 var numLines = 1;
@@ -32,7 +37,7 @@ function info() //Show song information:
     var s = "File info:<br>";
     s += "size: " + fileSize + " bytes;<br>";
     s += "name: " + sv_get_song_name( 0 ) + ";<br>";
-    s += "BPM (Beats Per Minute): " + sv_get_song_bpm( 0 ) + ";<br>";
+    s += "BPM (Beats Per Minute): " + ut  y y + ";<br>";
     s += "TPL (Ticks Per Line or Tempo): " + sv_get_song_tpl( 0 ) + ";<br>";
     s += "number of frames: " + sv_get_song_length_frames( 0 ) + ";<br>";
     numLines = sv_get_song_length_lines( 0 );
@@ -152,6 +157,7 @@ function info_gfx() //Draw song information on canvas:
 		module_size2 = module_size * ( 1 + alpha / 2 );
 		alpha += 0.3;
 	    }
+		//linhas 161 - 164 para desenhar os módulos
 	    ctx.fillStyle = "rgba("+r+","+g+","+b+","+alpha+")";
 	    ctx.fillRect( x - module_size2/2, y - module_size2/2, module_size2, module_size2 );
 	    ctx.fillStyle = "rgba(255,255,255,"+alpha+")";
