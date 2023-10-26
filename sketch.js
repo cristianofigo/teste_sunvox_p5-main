@@ -1,5 +1,11 @@
 //var nms = sv_get_number_of_modules;
 //let linha = sv_get_current_line(0);
+
+function preload() {
+  font1 = loadFont('MigaeSemibold-3zd2M.otf');
+  //font2 = loadFont('IndieFlower-Regular.ttf');
+}
+
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight, WEBGL);
     canvas.position(200,0);
@@ -22,6 +28,7 @@ function setup() {
     fill(200, 100, 0, 50);
     let rnd = random(50);
     ellipse(mouseX, mouseY, rnd, rnd);
+      textFont(font1);
     textSize(16);
     text(sv_get_song_name(0), 150, 30);
     text("BPM:" + sv_get_song_bpm( 0 ), 100, 50);
