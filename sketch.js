@@ -41,7 +41,13 @@ function setup() {
         circulos();
     }
     else{
-        background("#7FFFD403");
+        background(0, 220, 0, 100);
+      cube(50,255);
+  cube(75,90);
+  cube(100,0);
+  cube(150,190);
+  cube(200,255);
+  cube(275,0);
 
     }
   }
@@ -65,4 +71,14 @@ function circulos(){
       ellipse(0, 0, rad, rad, 50)
     pop()
   }
+}
+
+function cube(size,color) {
+  noFill();
+  //small box
+  stroke(color);
+  rotateX(frameCount * 0.02);
+  rotateY(frameCount * 0.02);
+  box(size,size,size);
+      
 }
