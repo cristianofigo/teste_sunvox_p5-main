@@ -1,4 +1,5 @@
 let angle=0;
+let size = 40;
 function setup() {
   createCanvas(400, 400);
   angleMode(DEGREES);
