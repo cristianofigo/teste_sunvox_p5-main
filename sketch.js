@@ -43,43 +43,49 @@ function setup() {
     else{
         background(0, 220, 0, 100);
       cube(50,255);
-  cube(75,90);
-  cube(100,0);
-  cube(150,190);
-  cube(200,255);
-  cube(275,0);
+  cube();
 
     }
   }
 
 function circulos(){
-    rotateX(90)
-  
-  let sRad = 480
-  let its = 48
-  
-  for (let i = 0; i < its; i++) {
-    
-    let inc = 360 / its  
-    t = frameCount/10
-  
-    let rad = map(cos(t + inc *i), -1, 1, 0, sRad)
-    let z = map(cos(90 + t + inc * i), -1, 1, -sRad/2, sRad/2)
-    
-    push()
-      translate(0, 0, z)
-      ellipse(0, 0, rad, rad, 50)
-    pop()
+    background(240);
+  translate(width/2, height/2);
+
+  noFill();
+  stroke(0);
+  beginShape();
+  for (let theta = 0; theta <= 2 * PI; theta += 0.05) {
+    vertex( 100 * (1 + pow(cos(theta),2))*sin(theta),
+             100 * cos(theta) * pow(sin(theta),2) );
   }
+  endShape();
+  
+  rotate(angle - PI/2);
+
+  noFill();
+  ellipse(50, 0, 100, 200)
+
+  noStroke();
+  fill('red');
+  circle(100 * pow(sin(angle),2), 100 * sin(2*angle), 7);
+  
+  
+    angle += 0.01;
 }
 
-function cube(size,color) {
-  push();
-  noFill();
-  //small box
-  stroke(color);
-  rotateX(frameCount * 0.02);
-  rotateY(frameCount * 0.02);
-  box(size,size,size);
-      pop();
+function cube() {
+   background(0);
+  translate(200,200)
+  rotate(45)
+  rotate(angle);
+  noFill()
+  stroke(255)
+  rectMode(CENTER)
+  rect(0,0,50,50)
+  rect(0,0,40,40)
+  rect(0,0,30,30)
+  rect(0,0,20,20)
+  
+  angle=angle+1
 }
