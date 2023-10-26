@@ -1,7 +1,7 @@
 //var nms = sv_get_number_of_modules;
 //let linha = sv_get_current_line(0);
 function setup() {
-    canvas = createCanvas(windowWidth, 100);
+    canvas = createCanvas(windowWidth, windowHeight, WEBGL);
     canvas.position(200,0);
     //canvas.position(0, 0);
     //canvas.style('zdex', '-1');
@@ -12,7 +12,10 @@ function setup() {
     background("#7FFFD400");
     //samp.autostart = true;
    // console.log(nms);
-               
+  stroke(255, 100)
+  strokeWeight(4)
+  noFill()
+  angleMode(DEGREES)
     } 
   
   function draw(){
@@ -27,10 +30,32 @@ function setup() {
     background("#7FFFD403");
 
     if (sv_get_current_line(0) >= 20 && sv_get_current_line(0) < 100 ){
-        background (200, 0, 0);
+        background (200, 0, 0, 100);
+        circulos();
     }
     else{
         background("#7FFFD403");
 
     }
   }
+
+function circulos(){
+    rotateX(90)
+  
+  let sRad = 480
+  let its = 48
+  
+  for (let i = 0; i < its; i++) {
+    
+    let inc = 360 / its  
+    t = frameCount/10
+  
+    let rad = map(cos(t + inc *i), -1, 1, 0, sRad)
+    let z = map(cos(90 + t + inc * i), -1, 1, -sRad/2, sRad/2)
+    
+    push()
+      translate(0, 0, z)
+      ellipse(0, 0, rad, rad, 50)
+    pop()
+  }
+}
