@@ -7,7 +7,7 @@ function preload() {
 }
 
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+    canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(200,0);
     //canvas.position(0, 0);
     //canvas.style('zdex', '-1');
