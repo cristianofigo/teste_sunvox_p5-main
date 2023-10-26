@@ -74,11 +74,12 @@ function circulos(){
 }
 
 function cube(size,color) {
+  push();
   noFill();
   //small box
   stroke(color);
   rotateX(frameCount * 0.02);
   rotateY(frameCount * 0.02);
   box(size,size,size);
-      
+      pop();
 }
