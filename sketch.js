@@ -7,7 +7,17 @@ function setup() {
 function draw() {
   
   background(0);
- retang
+if (sv_get_current_line(0) >= 20 && sv_get_current_line(0) < 100 ){
+        background (200, 0, 0, 100);
+        retang();
+    }
+    else{
+        background(0, 220, 0, 100);
+      triang();
+ 
+
+    }
+
 }
 
 function retang(){
