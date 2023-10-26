@@ -1,6 +1,8 @@
 //var nms = sv_get_number_of_modules;
 //let linha = sv_get_current_line(0);
 
+let angle=0;
+
 function preload() {
   font1 = loadFont('MigaeSemibold-3zd2M.otf');
   //font2 = loadFont('IndieFlower-Regular.ttf');
